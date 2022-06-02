@@ -48,8 +48,6 @@ router.post('/', [
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
 
-        console.log('password...', user.password);
-
         await user.save();
 
         // Return jsonwebtoken
